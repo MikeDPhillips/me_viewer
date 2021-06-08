@@ -1,10 +1,32 @@
 .App {
   text-align: center;
+  font-weight: bold;
+  font-size:20px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.character-container {
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-top: 3em;
+}
+
+button > * {
+  pointer-events: none;
+}
+
+.save-all {
+  font-size:40px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 2px outset buttonface;
+  background-color: buttonface;
+  color: black;
+  padding: 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -27,6 +49,35 @@
 .App-link {
   color: #61dafb;
 }
+
+table {
+  counter-reset: rowNumber;
+  justify-content: right;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td {
+  border: 1px solid gray;
+}
+td.char, td.me_char {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: left;
+  width: 40%;
+}
+td.transfer, td.save {
+  width: 10%;
+}
+table tr::before {
+  display: table-cell;
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  padding-right: 0.3em;
+  text-align: right;
+}
+
 
 @keyframes App-logo-spin {
   from {
